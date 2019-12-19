@@ -13,6 +13,14 @@
                         <?php endif;?>
                        <?php
                         
+                            $photo=new photo();
+                            $photo->title="a moon";
+                            $photo->description="full face pic of moon";
+                            $photo->size=1456;
+                            $photo->type="jpeg";
+                            $photo->filename="Moon";
+                            $photo->create();
+
                               
                        ?>
                         <h1 class="page-header">
