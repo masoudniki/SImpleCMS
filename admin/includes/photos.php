@@ -8,6 +8,7 @@
         public $description;
         public $type;
         public $size;
+        public $filename;
         
 
 
