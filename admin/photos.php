@@ -29,14 +29,58 @@
                             Photos
                             <small>Subheading</small>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        <div class="col-md-12">
+                        
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>PhotoID</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Type</th>
+                                        <th>Size</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    
+
+                                    </tr>
+                                    
+                                </tbody>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            </table>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        </div>
+
+
+
+
                     </div>
                 </div>
                 <!-- /.row -->
