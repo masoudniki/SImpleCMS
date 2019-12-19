@@ -7,6 +7,31 @@
     }
     
 ?>
+<?php
+    if(isset($_POST['submit']))
+    {
+
+        $photo=new Photo();
+        $photo->title=isset($_POST['title']) ? $_POST['title'] : null ;
+        $photo->set_file($_FILES['file_upload']);
+        
+        if($photo->save())
+        {
+            echo "hey men you do it";
+        }
+        else{
+            var_dump($photo->custom_err);
+        }
+
+        unset($_POST);
+        
+
+
+    }
+
+
+
+?>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -41,13 +66,13 @@
                             <form action="<?php $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" >
                             
                                 <div class="form-group">
-                                
-                                    <input type="text" name="title" id="" class="form-control">
+                                    <label for="title">Title</label>
+                                    <input type="text" name="title" id="title" class="form-control">
                                 
                                 </div>
                                 <div class="form-group">
                                 
-                                    <input type="file" name="file_upload" id="" class="form-control">
+                                    <input type="file" name="file_upload" id="" >
                                 
                                 </div>
                                 <input type="submit" name="submit" value="submit">
