@@ -58,7 +58,7 @@
                                 <?php foreach($photo as $obj):?>          
                                     
 
-                                        <td><img src="https://via.placeholder.com/200x150" alt="a pic"></td>
+                                        <td><img style="width:200px;height:150px;" src="<?php echo "Images".DS.$obj->filename?>" alt="a pic"></td>
                                         <td><?php echo $obj->photo_id; ?></td>
                                         <td><?php echo $obj->filename; ?></td>
                                         <td><?php echo $obj->title; ?></td>
