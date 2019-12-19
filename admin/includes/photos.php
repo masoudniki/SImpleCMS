@@ -9,7 +9,7 @@
         public $type;
         public $size;
         public $filename;
-        
+        public $save_image_directory="Images";
         public $tmp_path;
         public $custom_err=array();
         public   $Erorr_Upload_file=
@@ -73,11 +73,34 @@
                     $this->error[]="the file was not available";
                     return false;
                 }
-                else{
+
+               
+                else
+                {
                     $this->create();
                 }
 
+                $target_path=SITE_ROOT.DS."admin".DS.$this->save_image_directory.DS.$this->filename;
+                if(file_exists($target_path))
+                {
+                    $this->custom_err[]="the file {$this->filename} already exist";
+                    return false;
+                }
 
+                if(move_uploaded_file($this->tmp_path,$target_path));
+                {
+                    if($this->create())
+                    {
+                        unset($this->tmp_path);
+                        return true;
+                    }
+                }
+
+                else{
+
+                    $this->custom_err[]="the file directory probably does not have permisson";
+                    return false;
+                }
 
 
             }
