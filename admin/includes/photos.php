@@ -24,7 +24,35 @@
             UPLOAD_ERR_CANT_WRITE   =>"Failed to write file to disk. Introduced in PHP 5.1.0. ",
             UPLOAD_ERR_EXTENSION    =>"A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help. Introduced in PHP 5.2.0. "
         ];
-        
+        public function set_file($file)
+        {
+            if(empty($file) || !$file || !is_array($file))
+            {
+                $this->custom_err[]="There was no file uploded here";
+                return false;
+
+            }
+            elseif($file['error']!=0)
+            {
+
+                $this->custom_err[]=$this->Erorr_Upload_file[$file['error']];
+                return false;
+
+            }
+            else
+            {
+                $this->filename   =basename($file['name']);
+                $this->tmp_path   =$file['tmp_name'];
+                $this->type       =$file['type'];
+                $this->size       =$file['size'];
+
+            }
+
+
+
+
+
+        }
 
 
 
