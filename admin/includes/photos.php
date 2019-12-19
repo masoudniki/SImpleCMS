@@ -68,26 +68,21 @@
                 {
                     return false;
                 }
-                elseif(empty($this->filename) || empty($this->tmp_path) )
+                if(empty($this->filename) || empty($this->tmp_path) )
                 {
                     $this->error[]="the file was not available";
                     return false;
                 }
 
-               
-                else
-                {
-                    $this->create();
-                }
-
                 $target_path=SITE_ROOT.DS."admin".DS.$this->save_image_directory.DS.$this->filename;
+
                 if(file_exists($target_path))
                 {
                     $this->custom_err[]="the file {$this->filename} already exist";
                     return false;
                 }
 
-                if(move_uploaded_file($this->tmp_path,$target_path));
+                if(move_uploaded_file($this->tmp_path,$target_path))
                 {
                     if($this->create())
                     {
