@@ -103,6 +103,11 @@
 
 
         }
+        public function GetPicPath()
+        {
+            return $this->save_image_directory.DS.$this->filename;
+            
+        }
 
 
 
