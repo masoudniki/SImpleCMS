@@ -34,10 +34,10 @@
                             <table  class="table table-hover" >
                                 <thead>
                                     <tr>
-                                        <th>PhotoID</th>
+                                        <th>Photo</th>
+                                        <th>ID</th>
+                                        <th>Filename</th>
                                         <th>Title</th>
-                                        <th>Description</th>
-                                        <th>Type</th>
                                         <th>Size</th>
                                     </tr>
 
