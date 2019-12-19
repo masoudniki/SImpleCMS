@@ -11,18 +11,7 @@
                                 <?php $session->delet_notificaion()?>
                             </div>
                         <?php endif;?>
-                       <?php
-                        
-                            $photo=new photo();
-                            $photo->title="a moon";
-                            $photo->description="full face pic of moon";
-                            $photo->size=1456;
-                            $photo->type="jpeg";
-                            $photo->filename="Moon";
-                            $photo->create();
-
-                              
-                       ?>
+                        <?php ?>
                         <h1 class="page-header">
                             Blank Page
                             
