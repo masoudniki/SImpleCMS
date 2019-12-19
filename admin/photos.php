@@ -23,7 +23,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
+                <div class="row" >
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Photos
@@ -31,7 +31,7 @@
                         </h1>
                         <div class="col-md-12">
                         
-                            <table>
+                            <table  class="table table-hover" >
                                 <thead>
                                     <tr>
                                         <th>PhotoID</th>
