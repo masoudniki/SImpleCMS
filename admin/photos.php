@@ -1,5 +1,12 @@
 <?php include("includes/header.php"); ?>
+<?php
+    if(!$session->is_signed_in())
+    {
+        redirect("login.php");
+    }
+    
 
+?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,16 +51,21 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                <?php
+                                $photo=photo::find_all();
+                                ?>
+                                <tr> 
+                                <?php foreach($photo as $obj):?>          
                                     
 
-                                    </tr>
-                                    
+                                        <td><img src="https://via.placeholder.com/200x150" alt="a pic"></td>
+                                        <td><?php echo $obj->photo_id; ?></td>
+                                        <td><?php echo $obj->filename; ?></td>
+                                        <td><?php echo $obj->title; ?></td>
+                                        <td><?php echo $obj->size; ?></td>
+                                        
+                                </tr>
+                                <?php endforeach;?>
                                 </tbody>
                             
                             
