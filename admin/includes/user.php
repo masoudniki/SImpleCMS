@@ -41,7 +41,12 @@
 
         }
 
-        
+        public function save()
+        {
+
+            return isset($this->ID) ? $this->Update() :$this->create();
+
+        }
 
 
 

@@ -75,12 +75,7 @@ class db_object{
         }
 
 
-        public function save()
-        {
-
-            return isset($this->ID) ? $this->Update() :$this->create();
-
-        }
+       
 
 
         public function Update()
