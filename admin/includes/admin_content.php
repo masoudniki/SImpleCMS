@@ -12,14 +12,15 @@
                             </div>
                         <?php endif;?>
                        <?php
-                       
-                          
-                       
-                       
-                       
-                       
-                       
-                       
+                            $users=user::find_all();
+                            foreach($users as $user)
+                            {
+
+                                    echo $user->username;
+                                    echo "<br>";
+
+                                }
+                              
                        ?>
                         <h1 class="page-header">
                             Blank Page
