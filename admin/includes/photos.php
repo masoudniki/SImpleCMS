@@ -53,6 +53,39 @@
 
 
         }
+        public function save()
+        {
+
+            if($this->photo_id)
+            {
+
+                $this->Update();
+
+            }
+            else{
+
+                if(!empty($this->custom_err))
+                {
+                    return false;
+                }
+                elseif(empty($this->filename) || empty($this->tmp_path) )
+                {
+                    $this->error[]="the file was not available";
+                    return false;
+                }
+                else{
+                    $this->create();
+                }
+
+
+
+
+            }
+
+
+
+
+        }
 
 
 
