@@ -110,7 +110,7 @@ class db_object{
         {
             global $database;
             $sql="Delete from " .static::$db_table."  ";
-            $sql.=" where ID=".$database->escape_string($this->ID);
+            $sql.="  where ".static::$search_table ."=".$database->escape_string($this->{static::$search_table});
             $database->query($sql);
             
 
