@@ -32,6 +32,13 @@
                 <!-- Page Heading -->
                 <div class="row" >
                     <div class="col-lg-12">
+                        <?php if($session->notificationExist()):?>
+                            <div class="alert alert-<?php echo $session->notiGetType() ?> alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong><?php echo strtoupper($session->notiGetType()) ?></strong> <?php echo $session->notiGetMsg()?>
+                                <?php $session->delet_notificaion()?>
+                            </div>
+                        <?php endif;?>
                         <h1 class="page-header">
                             Photos
                             <small>Subheading</small>
