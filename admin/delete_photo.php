@@ -2,7 +2,7 @@
 <?php
     if(!$session->is_signed_in())
     {
-        redirect("login.php");
+        redirect("../login.php");
     }
     
 
@@ -11,7 +11,7 @@
 
   if(empty($_GET['id']))
   {
-    redirect("../photos.php");
+    redirect("photos.php");
   }
 
   $photo=photo::find_by_id($_GET['id']);
@@ -20,13 +20,17 @@
   {
 
     $photo->delete_photo();
+    $session->set_notification("success","Pic Deleted successfully!");
     redirect("../photos.php");
+    
 
   }
   else{
 
-      $message="soryy the photo ID does not exist";
-      redirect("../photos.php");
+    
+    $session->set_notification("danger","Picture Does not Deleted");
+    redirect("../photos.php");
+      
   }
 
 
