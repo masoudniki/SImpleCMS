@@ -15,7 +15,7 @@ class db_object{
 
     public static function find_by_id($ID)
     {
-        $result_array=static::find_by_query("select * from ".static::$db_table."  where ID=$ID");
+        $result_array=static::find_by_query("select * from ".static::$db_table."  where ".static::$search_table ."="."$ID");
         $result=!empty($result_array)?array_shift($result_array):false;
         return $result;
 
