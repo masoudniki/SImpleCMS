@@ -11,7 +11,7 @@
                                 <?php $session->delet_notificaion()?>
                             </div>
                         <?php endif;?>
-                        <?php ?>
+                        
                         <h1 class="page-header">
                             Blank Page
                             
