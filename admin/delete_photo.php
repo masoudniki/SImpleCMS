@@ -20,7 +20,7 @@
   {
 
     $photo->delete_photo();
-    $session->set_notification("success","Pic Deleted successfully!");
+    $session->set_notification("success","Picture Deleted successfully!");
     redirect("../photos.php");
     
 
@@ -28,7 +28,7 @@
   else{
 
     
-    $session->set_notification("danger","Picture Does not Deleted");
+    $session->set_notification("danger","Picture Does not exist");
     redirect("../photos.php");
       
   }
