@@ -4,11 +4,13 @@
 
         protected static $db_table="users";//name of the user table 
         protected static $db_table_fields=['username','password','FirstName','LastName'];
+        protected static $search_table="ID";
         public $ID;
         public $username;
         public $LastName;
         public $password;
         public $FirstName;
+        
         
 
          

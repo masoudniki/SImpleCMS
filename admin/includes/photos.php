@@ -3,6 +3,7 @@
 
         protected static $db_table="photos";//name of the user table 
         protected static $db_table_fields=['photo_id','title','description','filename','type','size'];
+        protected static $search_table="photo_id";
         public $photo_id;
         public $title;
         public $description;

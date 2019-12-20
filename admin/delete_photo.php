@@ -9,9 +9,13 @@
 ?>
 <?php
 
-    echo "<pre>";
-    var_dump($_GET);
-    echo "</pre>";
+  if(empty($_GET['id']))
+  {
+    redirect("../photos.php");
+  }
+  
+  $photo=photo::find_by_id($_GET['id']);
+
 
 
 
