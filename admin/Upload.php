@@ -17,7 +17,7 @@
         
         if($photo->save())
         {
-            echo "hey men you do it";
+            $session->set_notification("success","Pic Uploded successfully!");
         }
         else{
             var_dump($photo->custom_err);
@@ -58,6 +58,13 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
+                    <?php if($session->notificationExist()):?>
+                            <div class="alert alert-<?php echo $session->notiGetType() ?> alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong><?php echo strtoupper($session->notiGetType()) ?></strong> <?php echo $session->notiGetMsg()?>
+                                <?php $session->delet_notificaion()?>
+                            </div>
+                        <?php endif;?>
                         <h1 class="page-header">
                             Upload
                             <small>Subheading</small>
@@ -67,12 +74,12 @@
                             
                                 <div class="form-group">
                                     <label for="title">Title</label>
-                                    <input type="text" name="title" id="title" class="form-control">
+                                    <input type="text" name="title" id="title" class="form-control" required>
                                 
                                 </div>
                                 <div class="form-group">
                                 
-                                    <input type="file" name="file_upload" id="" >
+                                    <input type="file" name="file_upload" id="" required>
                                 
                                 </div>
                                 <input type="submit" name="submit" value="submit">
