@@ -57,8 +57,19 @@
                                 <tr> 
                                 <?php foreach($photo as $obj):?>          
                                     
-                                    <?php echo "hello";?>
-                                        <td><img style="width:200px;height:150px;" src="<?php echo $obj->GetPicPath()?>" alt="a pic"></td>
+                                    
+                                        <td><img style="width:200px;height:150px;" src="<?php echo $obj->GetPicPath()?>" alt="a pic">
+                                            <div class="pictures_link">
+
+                                                <a href="delete_photo.php/?id=<?php echo $obj->photo_id ?>">Delete</a>
+                                                <a href="">Edit</a>
+                                                <a href="">View</a>
+
+                                            </div>
+
+                                        
+                                        
+                                        </td>
                                         <td><?php echo $obj->photo_id; ?></td>
                                         <td><?php echo $obj->filename; ?></td>
                                         <td><?php echo $obj->title; ?></td>
