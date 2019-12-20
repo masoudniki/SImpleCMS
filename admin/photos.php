@@ -61,7 +61,7 @@
                                         <td><img style="width:200px;height:150px;" src="<?php echo $obj->GetPicPath()?>" alt="a pic">
                                             <div class="pictures_link">
 
-                                                <a href="delete_photo.php/?id=<?php echo $obj->photo_id ?>">Delete</a>
+                                                <a href="delete_photo.php/delete?id=<?php echo $obj->photo_id ?>">Delete</a>
                                                 <a href="">Edit</a>
                                                 <a href="">View</a>
 
