@@ -65,7 +65,7 @@
                                 <?php foreach($photo as $obj):?>          
                                     
                                     
-                                        <td><img style="width:200px;height:150px;" src="<?php echo $obj->GetPicPath()?>" alt="a pic">
+                                        <td><img class="img-responsive" src="<?php echo $obj->GetPicPath()?>" alt="a pic">
                                             <div class="pictures_link">
 
                                                 <a href="delete_photo.php/delete?id=<?php echo $obj->photo_id ?>">Delete</a>
