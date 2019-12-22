@@ -2,7 +2,7 @@
 <?php
     if(!$session->is_signed_in())
     {
-        redirect("../login.php");
+        redirect("login.php");
     }
     
 
@@ -21,7 +21,7 @@
 
     $photo->delete_photo();
     $session->set_notification("success","Picture Deleted successfully!");
-    redirect("../photos.php");
+    redirect("photos.php");
     
 
   }
@@ -29,7 +29,7 @@
 
     
     $session->set_notification("danger","Picture Does not exist");
-    redirect("../photos.php");
+    redirect("photos.php");
       
   }
 
