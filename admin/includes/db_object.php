@@ -95,7 +95,7 @@ class db_object{
 
             $sql="update " .static::$db_table." set ";
             $sql.=implode(',',$reday_sql);
-            $sql.=" Where ID=".$database->escape_string($this->ID);
+            $sql.=" Where  ".static::$search_table." =".$database->escape_string($this->{static::$search_table});
            
 
             $database->query($sql);
@@ -155,12 +155,6 @@ class db_object{
             $sql.=" values('".implode("','",array_values($the_porperties))."')";
             
             
-            // $sql.=$database->escape_string($this->username)."','";
-            // $sql.=$database->escape_string($this->password)."','";
-            // $sql.=$database->escape_string($this->FirstName)."','";
-            // $sql.=$database->escape_string($this->LastName)."')";
-            
-            
             if($database->query($sql)){
                 $this->ID=$database->the_insert_id();
                 return true;
@@ -172,6 +166,14 @@ class db_object{
 
 
         }
+        public function save()
+        {
+
+            return isset($this->{static::$search_table}) ? $this->Update() :$this->create();
+
+        }
+    }
+       
 
 
 
@@ -183,16 +185,6 @@ class db_object{
 
 
 
-
-
-
-
-
-
-
-
-
-}
 
 
 
