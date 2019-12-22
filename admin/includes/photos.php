@@ -12,8 +12,8 @@
         public $filename;
         public $save_image_directory="Images";
         public $tmp_path;
-        public $alternatetext;
-        public $caption;
+        public $AlternateText;
+        public $Caption;
         public $custom_err=array();
         public   $Erorr_Upload_file=
         [

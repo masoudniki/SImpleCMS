@@ -21,6 +21,7 @@
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/81_edit_photo_styles.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -32,11 +33,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        img
-        {
-            max-width: 200px;
-            max-height: 125px;
-        }
+        
+img{
+  
+    max-width: 400px;
+    max-height: 250px;
+
+}
+        
     
     
     </style>
