@@ -2,7 +2,7 @@
     class Photo extends db_object{
 
         protected static $db_table="photos";//name of the user table 
-        protected static $db_table_fields=['photo_id','title','description','filename','type','size'];
+        protected static $db_table_fields=['photo_id','title','description','filename','type','size','caption','alternatetext'];
         protected static $search_table="photo_id";
         public $photo_id;
         public $title;
@@ -12,6 +12,8 @@
         public $filename;
         public $save_image_directory="Images";
         public $tmp_path;
+        public $alternatetext;
+        public $caption;
         public $custom_err=array();
         public   $Erorr_Upload_file=
         [
