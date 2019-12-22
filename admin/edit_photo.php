@@ -86,9 +86,18 @@
 
 
                             </div>
+
+
+
+                            <div class="form-group">
+
+
+                            <a href="#" class="thumbnail"><img class="img-thumbnail" src="<?php echo $photo->GetPicPath(); ?>" alt="<?php echo $photo->alternatetext; ?>"></a>
+
+                            </div>
                             <div class="form-group">
                                 <label for="Caption">Caption</label>
-                                <input type="text" name="Caption" id="Caption" class="form-control" value="<?php echo $photo->caption;?>" >
+                                <input type="text" name="Caption" id="Caption" class="form-control" value="<?php echo $photo->Caption;?>" >
                                 
                             </div>
 
@@ -96,7 +105,7 @@
 
                             <div class="form-group">
                                 <label for="AlternateText">Alternate Text</label>
-                                <input type="text" name="AlternateText" id="AlternateText" class="form-control" value="<?php echo $photo->alternatetext;?>" >
+                                <input type="text" name="AlternateText" id="AlternateText" class="form-control" value="<?php echo $photo->AlternateText;?>" >
                                 
                             </div>
 
