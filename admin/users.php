@@ -41,9 +41,10 @@
                             </div>
                         <?php endif;?>
                         <h1 class="page-header">
-                            users
-                            <small>Subheading</small>
+                            Users
+                            
                         </h1>
+                        <a href="add_user.php"><button type="button" class="btn btn-primary btn-lg">Add User</button></a>
                         <div class="col-md-12">
                         
                             <table  class="table table-hover" >
@@ -73,9 +74,9 @@
                                         <td><?php echo $obj->username; ?>
                                             <div class="pictures_link">
 
-                                                    <a href="delete_user.php?id=<?php echo $obj->ID ?>">Delete</a>
-                                                    <a href="edit_user.php?id=<?php echo $obj->ID ?>">Edit</a>
-                                                    <a href="">View</a>
+                                                    <a href="delete_user.php?id=<?php echo $obj->ID ?>"><button type="button" class="btn btn-danger btn-xs">Delete</button></a>
+                                                    <a href="edit_user.php?id=<?php echo $obj->ID ?>"><button type="button" class="btn btn-info btn-xs">Edit</button></a>
+                                                    <a href=""><button type="button" class="btn btn-success btn-xs">View</button></a>
 
                                             </div>
 
