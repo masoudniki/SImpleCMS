@@ -21,7 +21,7 @@
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/81_edit_photo_styles.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
