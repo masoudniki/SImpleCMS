@@ -156,7 +156,7 @@ class db_object{
             
             
             if($database->query($sql)){
-                $this->ID=$database->the_insert_id();
+                $this->{static::$search_table}=$database->the_insert_id();
                 return true;
             }
             else
