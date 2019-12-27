@@ -26,24 +26,31 @@
                 $user->FirstName     =$_POST['FirstName'];
                 $user->LastName      =$_POST['LastName'];
                 $user->password      =$_POST['Password'];
-                
-                // if($user->save_user_and_image())
-                // {
-                //     $session->set_notification('success','The User Updated successfully :)');
-                // }
-                // else{
-                //     $session->set_notification('danger','The User Didnt Update!!!!');
-                //     var_dump($user->custom_err);
-                // }
-                if(empty($_FILES['user_image']))
+               
+                if(($_FILES['user_image']['error']==4))
                 {
-                    $user->save();
+                    if($user->save())
+                    {
+                        
+                        $session->set_notification('success','The User Updated successfully :)');
+                    }
+                    else{
+                        
+                        $session->set_notification('danger','The User did not update :(');
+                    }
                 }
                 else
                 {
                     $user->set_file($_FILES['user_image']);
-                    $user->save_user_and_image();
-                    $user->save();
+                    if($user->save_user_and_image())
+                    {
+                        $session->set_notification('success','The User Updated successfully :)');
+                    }
+                    else{
+                        
+                        $session->set_notification('danger','The User did not  update :(');
+                    }
+                   
                 }
                 
         }
@@ -151,10 +158,15 @@
 
                             <div class="form-group">
                                 
-                                <input type="submit" name="Update" class="btn btn-success btn-lg btn-block">
+                                <input type="submit" name="Update" class="btn btn-success btn-lg btn-block" value="Update">
 
                             </div>
+                            <div class="form-group">
+                                
+                                <a class="btn btn-danger btn-lg btn-block" href="delete_user.php?id=<?php echo $user->ID;?>">Delete</a>
 
+                            </div>
+                            
                         </div>
                        
                     </form>
