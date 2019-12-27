@@ -80,16 +80,11 @@
         public function save_user_and_image()
         {
 
-            if($this->ID)
-            {
-
-                $this->Update();
-
-            }
-            else{
+           
 
                 if(!empty($this->custom_err))
                 {
+                    
                     return false;
                 }
                 if(empty($this->user_image) || empty($this->tmp_path) )
@@ -102,6 +97,7 @@
 
                 if(file_exists($target_path))
                 {
+                   
                     $this->custom_err[]="the file {$this->user_image} already exist";
                     return false;
                 }
@@ -143,7 +139,7 @@
 
 
 
-    }
+    
 
 
 
