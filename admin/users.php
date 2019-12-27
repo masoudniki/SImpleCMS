@@ -76,7 +76,7 @@
 
                                                     <a href="delete_user.php?id=<?php echo $obj->ID ?>"><button type="button" class="btn btn-danger btn-xs">Delete</button></a>
                                                     <a href="edit_user.php?id=<?php echo $obj->ID ?>"><button type="button" class="btn btn-info btn-xs">Edit</button></a>
-                                                    <a href=""><button type="button" class="btn btn-success btn-xs">View</button></a>
+                                                    
 
                                             </div>
 
