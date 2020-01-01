@@ -27,6 +27,16 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Comments
+                            <?php
+                            $comments=comment::find_the_comment(35);
+                            
+                            echo "<pre>";
+                            var_dump($comments);
+                            echo "</pre>";
+                            
+                            
+                            
+                            ?>
                             <small>Subheading</small>
                         </h1>
                         <ol class="breadcrumb">
