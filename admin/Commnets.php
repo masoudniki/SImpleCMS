@@ -1,4 +1,12 @@
 <?php include("includes/header.php"); ?>
+<?php
+    if(!$session->is_signed_in())
+    {
+        redirect("login.php");
+    }
+    
+
+?>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -23,30 +31,90 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
+                <div class="row" >
                     <div class="col-lg-12">
+                        <?php if($session->notificationExist()):?>
+                            <div class="alert alert-<?php echo $session->notiGetType() ?> alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong><?php echo strtoupper($session->notiGetType()) ?></strong> <?php echo $session->notiGetMsg()?>
+                                <?php $session->delet_notificaion()?>
+                            </div>
+                        <?php endif;?>
                         <h1 class="page-header">
                             Comments
-                            <?php
-                            $comments=comment::find_the_comment(35);
                             
-                            echo "<pre>";
-                            var_dump($comments);
-                            echo "</pre>";
-                            
-                            
-                            
-                            ?>
-                            <small>Subheading</small>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        <a href="add_user.php"><button type="button" class="btn btn-primary btn-lg">Add User</button></a>
+                        <div class="col-md-12">
+                        
+                            <table  class="table table-hover" >
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>PhotoCommented</th>
+                                        <th>Auther</th>
+                                        <th>Body</th>
+                                        
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+                                <?php
+                                $comments=Comment::find_all();
+                                ?>
+                                <tr> 
+                                <?php foreach($comments as $comment):?>          
+                                    
+                                    
+                                        
+                                        <th><?php echo $comment->ID; ?></th>
+                                       
+                                        <td><?php echo "notin";; ?>
+                                            <div class="pictures_link">
+
+                                                    <a href="delete_comment.php?id=<?php echo $comment->ID ?>"><button type="button" class="btn btn-danger btn-xs">Delete</button></a>
+                                                   <!-- <a href="edit_user.php?id=<?php echo $comment->ID ?>"><button type="button" class="btn btn-info btn-xs">Edit</button></a> -->
+                                                    
+
+                                            </div>
+
+                                        
+                                        
+                                        </td>
+                                        <td><?php echo $comment->author; ?></td>
+                                        <td><?php echo $comment->body; ?></td>
+                                        
+                                        
+                                </tr>
+                                <?php endforeach;?>
+                                </tbody>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            </table>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        </div>
+
+
+
+
                     </div>
                 </div>
                 <!-- /.row -->
