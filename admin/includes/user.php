@@ -40,6 +40,7 @@
 
 
             $sql="select * from ".self::$db_table." where UserName='$username' AND Password='$passwod'";
+            
             $result_array=self::find_by_query($sql);
              
             return !empty($result_array)?array_shift($result_array):false;
