@@ -112,7 +112,7 @@ class db_object{
             $sql.=implode(',',$reday_sql);
             $sql.=" Where  ".static::$search_table." =".$database->escape_string($this->{static::$search_table});
            
-
+            
             
             
             return ($database->query($sql)) ? true : false;
@@ -185,6 +185,14 @@ class db_object{
         {
 
             return isset($this->{static::$search_table}) ? $this->Update() :$this->create();
+
+        }
+        public static function count(){
+
+            
+            return count(self::find_all());
+
+
 
         }
     }

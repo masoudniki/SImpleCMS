@@ -81,13 +81,14 @@
         public function save_user_and_image()
         {
 
-           
-
+                
+            
                 if(!empty($this->custom_err))
                 {
                     
                     return false;
                 }
+                
                 if(empty($this->user_image) || empty($this->tmp_path) )
                 {
                     $this->error[]="the file was not available";
@@ -95,18 +96,22 @@
                 }
 
                 $target_path=SITE_ROOT.DS."admin".DS.$this->up_dir.DS.$this->user_image;
-
+                
                 if(file_exists($target_path))
                 {
                    
                     $this->custom_err[]="the file {$this->user_image} already exist";
+                    echo "<pre>";
+                    
                     return false;
                 }
-
+                
                 if(move_uploaded_file($this->tmp_path,$target_path))
                 {
-                    if($this->Update())
+                    
+                    if($this->save())
                     {
+                        
                         unset($this->tmp_path);
                         return true;
                     }

@@ -4,11 +4,24 @@
 
         private $signed_in=false;
         public $user_id;
+        public $count;
+
 
         function __construct()
         {
             session_start();
+            $this->visitor_cout();
             $this->check_the_login();
+        }
+        public function visitor_cout()
+        {
+            if(isset($_SESSION['count']))
+            {
+                $this->count=$_SESSION['count']+=1;
+            }else{
+                $this->count=$_SESSION['count']=1;
+            }
+
         }
 
         public function is_signed_in()
