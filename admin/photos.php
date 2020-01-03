@@ -53,6 +53,7 @@
                                         <th>Filename</th>
                                         <th>Title</th>
                                         <th>Size</th>
+                                        <th>Comments</th>
                                     </tr>
 
                                 </thead>
@@ -65,12 +66,12 @@
                                 <?php foreach($photo as $obj):?>          
                                     
                                     
-                                        <td><img style="max-width: 400px;max-height: 250px;" class="img-responsive img-photo-page" src="<?php echo $obj->GetPicPath()?>" alt="a pic">
+                                        <td><img style="max-width: 400px;max-height: 250px;border-radius=5px;" class="img-responsive img-photo-page" src="<?php echo $obj->GetPicPath()?>" alt="a pic">
                                             <div class="pictures_link">
 
                                                 <a href="delete_photo.php?id=<?php echo $obj->photo_id ?>">Delete</a>
                                                 <a href="edit_photo.php?id=<?php echo $obj->photo_id ?>">Edit</a>
-                                                <a href="">View</a>
+                                                <a href="../photo.php?id=<?php echo $obj->photo_id?>">View</a>
 
                                             </div>
 
@@ -81,6 +82,23 @@
                                         <td><?php echo $obj->filename; ?></td>
                                         <td><?php echo $obj->title; ?></td>
                                         <td><?php echo $obj->size; ?></td>
+                                        <td>
+                                        
+                                        <?php
+                                        $comments=comment::find_the_comment($obj->photo_id);
+                                        echo "<b>".count($comments)."</b>";
+                                        
+                        
+                                        ?>
+                                                    <div class="pictures_link">
+
+                                                    
+                                                    <a class="btn btn-primary" href="photo_comment.php?id=<?php echo $obj->photo_id; ?>" role="button" <?php if(count($comments)==0)echo "disabled";?> >Show Comment</a>
+
+                                                    </div>
+                                        
+                                        
+                                        </td>
                                         
                                 </tr>
                                 <?php endforeach;?>
