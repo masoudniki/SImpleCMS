@@ -21,7 +21,19 @@
 
     $comment->delete();
     $session->set_notification("success","comment Delted successfully!");
-    redirect("Commnets.php");
+    $refeer=basename($_SERVER['HTTP_REFERER']);
+   
+    $reffer_array=parse_url($refeer);
+    $refeer_path=$reffer_array['path'];
+    if($refeer_path=="photo_comment.php");
+    {
+      redirect($refeer);
+    }
+    if($refeer_path=="Commnets.php")
+    {
+      redirect($refeer_path);
+    }
+    
     
 
   }
