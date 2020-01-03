@@ -44,7 +44,7 @@
                             Comments
                             
                         </h1>
-                        <a href="add_user.php"><button type="button" class="btn btn-primary btn-lg">Add User</button></a>
+                        
                         <div class="col-md-12">
                         
                             <table  class="table table-hover" >
