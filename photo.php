@@ -13,10 +13,10 @@ $photo=photo::find_by_id($_GET['id']);
 
 if(isset($_POST['submit']))
 {
-    file_put_contents("hello.txt","hello");
+    
     $author=trim($_POST['author']);
     $body=trim($_POST['body']);
-    file_put_contents("hello.txt",json_encode($_POST));
+    
     
     $comment=Comment::create_comment($photo->photo_id,$author,$body);
     

@@ -23,7 +23,7 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Fiels', 'Coutn of each item'],
+          ['Fiels', 'count of each item'],
           ['View',     <?php echo $session->count;?>],
           ['Photo',      <?php echo photo::count(); ?>],
           ['user', <?php echo user::count();?>],
