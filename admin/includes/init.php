@@ -10,6 +10,7 @@
     require_once("session.php");
     require_once("photos.php");
     require_once("comment.php");
+    require_once("Paginate.php");
 
 
 
