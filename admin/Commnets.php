@@ -70,7 +70,10 @@
                                         
                                         <th><?php echo $comment->ID; ?></th>
                                        
-                                        <td><?php echo "notin";; ?>
+                                        <td><a>
+                                        <button type="button" class="btn btn-link"><?php echo $comment->photo_id ?></button>
+                                        
+                                        </a>
                                             <div class="pictures_link">
 
                                                     <a href="delete_comment.php?id=<?php echo $comment->ID ?>"><button type="button" class="btn btn-danger btn-xs">Delete</button></a>
