@@ -11,7 +11,7 @@
         public $body;
         public $Erorr_Upload_file='';
 
-        public static function create_comment($photo_id,$author="masoudniki",$body="")
+        public static function create_comment($photo_id,$author,$body="")
         {
             if(!empty($photo_id) && !empty($author) && !empty($body))
             {
