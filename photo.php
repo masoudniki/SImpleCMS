@@ -23,7 +23,11 @@ if(isset($_POST['submit']))
 
     if($comment && $comment->save())
     {
-        redirect("photo.php?id={$photo->photo_id}");
+        $session->set_notification("success","Comment submitted successfully :)");
+        unset($_POST['body']);
+        unset($_POST['author']);
+        unset($_POST['submit']);
+
     }
 
     
@@ -48,8 +52,16 @@ $comments=comment::find_the_comment($photo->photo_id);
 
             <!-- Blog Post Content Column -->
             <div class="col-lg-12">
+            
+            <?php if($session->notificationExist()):?>
+                            <div class="alert alert-<?php echo $session->notiGetType() ?> alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong><?php echo strtoupper($session->notiGetType()) ?></strong> <?php echo $session->notiGetMsg()?>
+                                <?php $session->delet_notificaion()?>
+                            </div>
+                        <?php endif;?>
 
-                <!-- Blog Post -->
+                
 
                 <!-- Title -->
                 <h1><?php echo $photo->title;?></h1>
