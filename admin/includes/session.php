@@ -36,7 +36,7 @@
 
              if($user)
              {
-                $this->user_id=$_SESSION['user_id']['ID']=$user->ID;
+                $this->user_id=$_SESSION['ID']=$user->ID;
                 $this->signed_in=true;
 
 
@@ -48,7 +48,7 @@
         public function logout()
         {
 
-            unset($_SESSION['user_id']);
+            unset($_SESSION['ID']);
             unset($this->user_id);
             $this->signed_in=false; 
 
@@ -58,9 +58,9 @@
 
         private function check_the_login(){
 
-            if(isset($_SESSION['user_id']))
+            if(isset($_SESSION['ID']))
             {
-                $this->user_id=$_SESSION['user_id']['ID'];
+                $this->user_id=$_SESSION['ID'];
                 $this->signed_in=true;
             }
             else{
@@ -72,25 +72,24 @@
         public function set_notification($type,$Msg)
         {
 
-            if(isset($_SESSION['user_id']))
-            {
-                $_SESSION['user_id']+=[
-                    'notification'=>[
+            
+                $_SESSION['notification']=[
+                    
                         "type"=>$type,
                         "message"=>$Msg
-                    ]
+                    
                     ];
 
 
-            }
+            
         }
         public function delet_notificaion()
         {
-            unset($_SESSION['user_id']['notification']);
+            unset($_SESSION['notification']);
         }
         public function notificationExist()
         {
-            if(isset($_SESSION['user_id']['notification']))
+            if(isset($_SESSION['notification']))
             {
                 return true;
             }
@@ -104,14 +103,14 @@
         {
             if($this->notificationExist())
             {
-                return $_SESSION['user_id']['notification']['type'];
+                return $_SESSION['notification']['type'];
             }
         }
         public function notiGetMsg()
         {
             if($this->notificationExist())
             {
-                return $_SESSION['user_id']['notification']['message'];
+                return $_SESSION['notification']['message'];
             }
         }
 
